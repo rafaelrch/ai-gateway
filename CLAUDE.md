@@ -171,4 +171,16 @@ Programar para interface → Strategy → Chain of Responsibility → Decorator 
 
 ## Estado atual
 
-- **2026-09-28:** projeto gerado (Maven, Boot 4.1.1, Java 21, pacote `br.com.rafael.aigateway`, Web + Validation). `./mvnw package` passa. Repositório com `git init`, sem nenhum commit. Módulo 0 em andamento: falta escrever os records e o controller.
+- **2026-09-28:** projeto gerado (Maven, Boot 4.1.1, Java 21, pacote `br.com.rafael.aigateway`, Web + Validation). `./mvnw package` passa.
+- **2026-09-29:** Módulo 0 concluído. Commit `9ce2dab` publicado em https://github.com/rafaelrch/ai-gateway (branch `main`). Decisões tomadas: `custoEstimado` é `BigDecimal` (criado sempre a partir de String), `duracaoMs` é `long`, `tokensGastos` é `int`. Checkpoint validado: 200 com prompt, 400 com prompt vazio ou ausente.
+- **2026-09-30:** Módulo 1, etapa 1 (estudo prévio) concluída. A nota `Strategy.md` do cofre foi reescrita para leigo (furadeira e brocas, exemplo de frete, lab da DIO) e ele respondeu as perguntas: conceito firme; a pergunta 5 (bean único com setter, condição de corrida) ficou aberta para o refactor.
+- **Próximo:** Módulo 1, etapa 2: versão feia (`AiGatewayService` com `if/else` de perfil, controller chamando o service). Testar também sem `perfil`.
+- **Ponto de atenção do Módulo 1:** a explicação só pegou com analogia física e exemplo fora do domínio do projeto. Não pressupor que ele lê UML ou entende interface de cara.
+- **Pontos de atenção observados no Módulo 0:** confundiu sintaxe de `record` com classe (campos no corpo, aceitou o "make static" do IntelliJ); ler a sugestão da IDE antes de aceitar. Rodar o compilador antes de pedir revisão.
+
+## Roadmap visual
+
+Página de acompanhamento: https://claude.ai/artifact/H8nh971azdjuFwwV5cWjjp
+Arquivo fonte: `~/Obsidian/rocha-karpathy/🧩-40-projetos/ai-gateway/roadmap.html`.
+
+**Atualize ao fim de cada etapa do ciclo**, não só de cada módulo: mude `ESTADO` (`moduloAtual`, `etapaAtual`, `atualizado`) no topo do script, preencha `feito` do módulo concluído, acrescente uma linha em `HISTORICO`, reescreva o bloco "Seu próximo passo" e republique o mesmo arquivo pela ferramenta Artifact com o `url` acima.

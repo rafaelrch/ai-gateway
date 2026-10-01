@@ -1,5 +1,6 @@
 package br.com.rafael.aigateway.api;
 
+import br.com.rafael.aigateway.api.core.AiGatewayService;
 import br.com.rafael.aigateway.api.dto.CompletionRequest;
 import br.com.rafael.aigateway.api.dto.CompletionResponse;
 import jakarta.validation.Valid;
@@ -12,9 +13,9 @@ import java.math.BigDecimal;
 @RestController
 public class CompletionController {
 
+    AiGatewayService service;
     @PostMapping("/completions")
     public CompletionResponse gerar(@RequestBody @Valid CompletionRequest cr){
-        CompletionResponse completionResponse = new CompletionResponse("c4f1a2b8", "Teste 1", "MOCK_RAPIDO", 2346, new BigDecimal("0.12"), false, 600);
-        return completionResponse;
+        return service.processar(cr);
     }
 }
