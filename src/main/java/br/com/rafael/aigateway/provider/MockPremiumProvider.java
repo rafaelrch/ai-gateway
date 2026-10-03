@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+import static br.com.rafael.aigateway.provider.Perfil.PREMIUM;
+
 @Component
 public class MockPremiumProvider implements AiProvider{
 
@@ -27,4 +29,8 @@ public class MockPremiumProvider implements AiProvider{
         return "MOCK_PREMIUM";
     }
 
+    @Override
+    public Perfil perfil(){
+        return PREMIUM;
+    }
 }

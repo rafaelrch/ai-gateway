@@ -4,5 +4,6 @@ public interface AiProvider{
 
     RespostaIa gerar(String prompt);
     String nome();
+    Perfil perfil();
 
 }

@@ -3,18 +3,17 @@ package br.com.rafael.aigateway.core;
 import br.com.rafael.aigateway.api.dto.CompletionRequest;
 import br.com.rafael.aigateway.api.dto.CompletionResponse;
 import br.com.rafael.aigateway.provider.AiProvider;
+import br.com.rafael.aigateway.provider.ProviderRegistry;
 import br.com.rafael.aigateway.provider.RespostaIa;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class AiGatewayService {
 
-    private final List<AiProvider> provedores;
+    private final ProviderRegistry registry;
 
-    public AiGatewayService(List<AiProvider> provedores) {
-        this.provedores = provedores;
+    public AiGatewayService(ProviderRegistry provider) {
+        this.registry = provider;
     }
 
     public CompletionResponse processar(CompletionRequest completionRequest){
@@ -22,17 +21,7 @@ public class AiGatewayService {
         long horaInicio = System.currentTimeMillis();
         long horaFim;
 
-        AiProvider providerEscolhido = null;
-        for(AiProvider provedor : provedores){
-            if(provedor.nome().equals("MOCK_" + completionRequest.perfil())){
-                providerEscolhido = provedor;
-                break;
-            }
-        }
-
-        if (providerEscolhido == null){
-            throw new IllegalArgumentException("Perfil desconhecido");
-        }
+        AiProvider providerEscolhido = registry.obter(completionRequest.perfil());
 
         RespostaIa resposta = providerEscolhido.gerar(completionRequest.prompt());
         horaFim = System.currentTimeMillis();

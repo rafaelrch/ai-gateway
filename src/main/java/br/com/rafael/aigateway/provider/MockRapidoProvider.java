@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+import static br.com.rafael.aigateway.provider.Perfil.RAPIDO;
+
 @Component
 public class MockRapidoProvider implements AiProvider{
 
@@ -25,5 +27,10 @@ public class MockRapidoProvider implements AiProvider{
     @Override
     public String nome() {
         return "MOCK_RAPIDO";
+    }
+
+    @Override
+    public Perfil perfil(){
+        return RAPIDO;
     }
 }
