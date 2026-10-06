@@ -12,7 +12,7 @@
 	<artifactId>ai-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ai-gateway</name>
-	<description/>
+	<description>Gateway de IA com padroes de projeto: Strategy, Factory, Chain of Responsibility, Decorator, Observer, Facade e Singleton</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -37,6 +37,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<!-- Swagger UI em /swagger-ui.html. A linha 3.x do springdoc e a que suporta o Spring Boot 4. -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>3.1.1</version>
 		</dependency>
 
 		<dependency>
