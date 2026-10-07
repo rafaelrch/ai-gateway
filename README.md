@@ -9,7 +9,6 @@ API Spring Boot que fica entre uma aplicação cliente e provedores de IA. A apl
 
 Os provedores são **mocks**: sem chave de API, sem chamada externa, sem custo. Latência e falhas são simuladas.
 
-Projeto do desafio de **Padrões de Projeto** do bootcamp *Java com IA* (DIO + Itaú). Sete padrões aplicados num problema real, cada um resolvendo uma dor que aparece no código antes dele.
 
 > Guia de estudo completo, padrão por padrão, com o código comentado: **[docs/PADROES.md](docs/PADROES.md)**
 
